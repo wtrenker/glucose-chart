@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn instance for glucose
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/home/bill/PycharmProjects/Glucose/
+Environment="PATH=/home/bill/PycharmProjects/Glucose/venv/bin/"
+ExecStart=/home/bill/PycharmProjects/Glucose/venv/bin/gunicorn --workers 3 --bind unix:glucose.sock -m 777 wsgi:app
+
+[Install]
+WantedBy=multi-user.target

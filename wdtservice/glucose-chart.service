@@ -1,0 +1,10 @@
+[Unit]
+Description=Gunicorn for Glucose
+
+[Service]
+WorkingDirectory=/home/bill/glucose-chart
+ExecStart=gunicorn --workers 4 --bind localhost:7000 wsgi-chart:app
+
+[Install]
+WantedBy=multi-user.target
+

@@ -1,12 +1,12 @@
 import decimal as dec
 import hashlib, binascii, os
-from datetime import datetime
+import datetime
 import pytz
 
 zulu = pytz.timezone('UTC')
 pst = pytz.timezone("America/Vancouver")
 
-dbFileName = "glucose.db"
+dbFileName = "meter.db"
 
 def decimalAverage(num1, num2):
     n1 = dec.Decimal(str(num1))
@@ -65,8 +65,14 @@ def isFloat(candidateStr=None):
         ok = False
     return ok
 
+def ymd(msdate):
+    dated = datetime.datetime.fromtimestamp(msdate / 1000)
+    dated = dated.strftime("%Y-%m-%d")
+    return dated
+
 if __name__ == '__main__':
-    print(dateTimeStr(datetime.now(), 'America/Vancouver', ampm=True, month=True, seconds=False))
+    print(dateTimeStr(datetime.datetime.now(), 'America/Vancouver', ampm=True, month=True, seconds=False))
     # print(timestr)
     # print(isFloat(''))
     # print(hash_password(''))
+    print(ymd(1581786089365))

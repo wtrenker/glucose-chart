@@ -1,0 +1,30 @@
+{% extends "Base.jinja2" %}
+    {% block content %}
+
+    <h2>2019 - 2020</h2>
+
+    <a href="/averages"><h3>Click Here To View My Average Daily Blood Glucose Chart</h3></a>
+
+    <div class="blockquote" class="blockquote-reverse"
+       style="border: 3px solid red; margin: 50px; padding: 10px; border-radius: 10px;
+       background-color: rgba(127, 255, 212, 0.1);">
+<p>This website allows me to track my daily blood glucose levels. My goal is to have a visual indicator of how various treatments affect my higher glucose levels due to my Diabetes. The chart shows the average daily blood glucose as a red line; it shows the target range by two solid lines; the single dashed line shows the trend (which is a 2nd-degree polynomial curve fit); another feature is that it provides for notes on the chart to highlight key items. You can view the live chart at any time by clicking the blue link at the top of this page. The chart is generated automatically, in real-time, so when I update the database daily, I don't have to do anything to re-plot the chart.</p>
+        <p>Illustrated on the current chart is a very realistic example of the fantastic improvement that Jardiance is making in reducing my blood glucose to healthier levels. I share this chart with my healthcare professionals who find it very helpful, and they have already spoken with some of their peers regarding the demonstrated efficacy of Jardiance in my case.</p>
+<p>On the technical side, this is a Python, Sqlite, and Matplotlib project and is the 2nd major version of the glucose software. This new version supports my objective of tracking the average daily blood glucose reading over a more extended period, not just a few weeks. I am using the open-source Caddy webserver to front-end the web site. Caddy is a secure https server that uses commercial-grade open source security technology. It is a production server written in the Go programming language which features tighter security than many of its counterparts. I am also using this project to delve into the Go language, which I feel is about to spring onto the web application development scene. As a Computer Scientist, working over the years in various computer languages, I think that the Go language brings together many of the advantageous features desired by the programming specialists in my profession.</p>
+<div style="text-align: right;">-- William Trenker (wtrenker@gmail.com)</div>
+    </div>
+
+    <div id="fixed">
+    <a class="admin" style="display: none;" href="/admin">Admin</a>
+    </div>
+
+{#    <div id="fixed">#}
+{#    <a class="admin" style="display: none;" href="{{ url_for('admin') }}Admin</a>#}
+{#    </div>#}
+    {#<div style="position: fixed; bottom: 0; right: 0;">
+        <a href="{{ url_for('dataentry') }}">
+            <img src="{{ url_for('static', filename='smiley.png') }}">
+        </a>
+    </div>#}
+    
+    {% endblock %}

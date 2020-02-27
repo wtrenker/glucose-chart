@@ -1,0 +1,11 @@
+[Unit]
+Description=Caddy for glucose2
+
+[Service]
+WorkingDirectory=/usr/local/caddy
+ExecStart=/usr/local/bin/caddy run 
+#-config Caddyfile -adapter caddyfile
+
+[Install]
+WantedBy=multi-user.target
+

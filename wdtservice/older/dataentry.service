@@ -1,0 +1,10 @@
+[Unit]
+Description=Data Entry for Glucose
+
+[Service]
+WorkingDirectory=/home/bill/glucose2/DataEntry
+ExecStart=python3.8 DataEntry.py
+
+[Install]
+WantedBy=multi-user.target
+
